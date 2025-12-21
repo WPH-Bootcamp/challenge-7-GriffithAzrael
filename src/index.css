@@ -1,1 +1,447 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+
+:root[data-theme='light'] {
+  color-scheme: light;
+}
+:root[data-theme='dark'] {
+  color-scheme: dark;
+}
+
+:root[data-theme='light'] .show-when-light {
+  display: block;
+}
+:root[data-theme='light'] .show-when-dark {
+  display: none;
+}
+:root[data-theme='dark'] .show-when-light {
+  display: none;
+}
+:root[data-theme='dark'] .show-when-dark {
+  display: block;
+}
+
+:root[data-theme='light'] .header-box {
+  background-color: rgb(255 255 255 / 0.5);
+  border-color: rgb(0 0 0 / 0.1);
+  color: black;
+}
+:root[data-theme='dark'] .header-box {
+  background-color: rgb(0 0 0 / 0.5);
+  border-color: rgb(255 255 255 / 0.1);
+  color: white;
+}
+
+/* MenuHeader hover pill */
+.menu-header-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  color: inherit;
+  transition: background-color 200ms ease, box-shadow 200ms ease,
+    color 200ms ease;
+}
+
+:root[data-theme='dark'] body {
+  background-color: #000;
+  color: #fff;
+}
+
+/* App shell theme*/
+:root[data-theme='light'] .app-shell {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+:root[data-theme='dark'] .app-shell {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.app-shell {
+  min-height: 100vh;
+  transition: background-color 200ms ease, color 200ms ease;
+}
+
+/* Light theme: soft gray pill + subtle shadow */
+:root[data-theme='light'] .menu-header-link:hover {
+  background-color: rgba(255, 255, 255, 0.695);
+  box-shadow: 0 14px 30px -22px rgba(0, 0, 0, 0.45);
+}
+
+/* Dark theme: darker pill */
+:root[data-theme='dark'] .menu-header-link:hover {
+  background-color: #181d27;
+}
+
+/* Focus (keyboard) */
+:root[data-theme='light'] .menu-header-link:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.18),
+    0 14px 30px -22px rgba(0, 0, 0, 0.45);
+}
+
+:root[data-theme='dark'] .menu-header-link:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.28);
+}
+
+/* Mobile menu overlay theme */
+:root[data-theme='dark'] .mobile-menu-overlay {
+  background-color: rgba(0, 0, 0);
+  color: #ffffff;
+}
+
+:root[data-theme='light'] .mobile-menu-overlay {
+  background-color: rgba(255, 255, 255);
+  color: #000000;
+}
+
+/* Mobile menu links */
+.mobile-menu-link {
+  display: block;
+  padding: 0.5rem 0;
+  color: inherit;
+  transition: color 200ms ease;
+}
+
+:root[data-theme='dark'] .mobile-menu-link:hover {
+  color: rgba(255, 255, 255, 0.9);
+}
+:root[data-theme='light'] .mobile-menu-link:hover {
+  color: rgba(0, 0, 0, 0.9);
+}
+
+/* Portfolio subtitle color */
+:root[data-theme='dark'] .portfolio-subtitle {
+  color: #a4a7ae;
+}
+:root[data-theme='light'] .portfolio-subtitle {
+  color: #717680;
+}
+
+/* Portfolio achievement cards */
+:root[data-theme='dark'] .achievement-card-theme {
+  background-color: #0a0d12;
+  border-color: #181d27;
+}
+
+:root[data-theme='light'] .achievement-card-theme {
+  background-color: #fafafa;
+  border-color: #dedcdc;
+}
+
+/* Our Process theme tokens */
+:root[data-theme='dark'] .process-muted {
+  color: #a4a7ae;
+}
+:root[data-theme='light'] .process-muted {
+  color: #717680;
+}
+
+:root[data-theme='dark'] .process-card {
+  background-color: #0a0d12;
+  border-color: #181d27;
+}
+
+:root[data-theme='light'] .process-card {
+  background-color: #fafafa;
+  border-color: #dedcdc;
+}
+
+:root[data-theme='dark'] .process-line {
+  background-color: #252b37;
+}
+:root[data-theme='light'] .process-line {
+  background-color: #dfdfdf;
+}
+
+/* Services muted text */
+:root[data-theme='dark'] .services-muted {
+  color: #a4a7ae;
+}
+:root[data-theme='light'] .services-muted {
+  color: #717680;
+}
+
+/* Services card background + border */
+:root[data-theme='dark'] .service-card-theme {
+  background-color: #0a0d12;
+  border-color: #181d27;
+}
+
+:root[data-theme='light'] .service-card-theme {
+  background-color: #fafafa;
+  border-color: #dedcdc;
+}
+
+/* Industries muted paragraph */
+:root[data-theme='dark'] .industry-muted {
+  color: #a4a7ae;
+}
+:root[data-theme='light'] .industry-muted {
+  color: #717680;
+}
+
+/* Industries tabs */
+:root[data-theme='dark'] .industry-inactive-bar {
+  background-color: #535862;
+}
+:root[data-theme='light'] .industry-inactive-bar {
+  background-color: #aaaaaa;
+}
+
+:root[data-theme='dark'] .industry-inactive-text {
+  color: #535862;
+}
+:root[data-theme='light'] .industry-inactive-text {
+  color: #aaaaaa;
+}
+
+/* Active label color: white in dark, black in light */
+:root[data-theme='dark'] .industry-active-text {
+  color: #ffffff;
+}
+:root[data-theme='light'] .industry-active-text {
+  color: #000000;
+}
+
+/* Testimonials subtitle */
+:root[data-theme='dark'] .reviews-muted {
+  color: #a4a7ae;
+}
+:root[data-theme='light'] .reviews-muted {
+  color: #717680;
+}
+
+/* Testimonial card background/border */
+:root[data-theme='dark'] .review-card-theme {
+  background-color: #0a0d12;
+  border-color: #181d27;
+}
+:root[data-theme='light'] .review-card-theme {
+  background-color: #fafafa;
+  border-color: #dedcdc;
+}
+
+/* Gradient fades */
+:root[data-theme='dark'] .reviews-fade-left {
+  background: linear-gradient(to right, #000 0%, transparent 100%);
+}
+:root[data-theme='dark'] .reviews-fade-right {
+  background: linear-gradient(to left, #000 0%, transparent 100%);
+}
+
+:root[data-theme='light'] .reviews-fade-left {
+  background: linear-gradient(to right, #fff 0%, transparent 100%);
+}
+:root[data-theme='light'] .reviews-fade-right {
+  background: linear-gradient(to left, #fff 0%, transparent 100%);
+}
+
+/* Dots default/hover colors */
+:root[data-theme='dark'] .reviews-dot {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+:root[data-theme='dark'] .reviews-dot:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+:root[data-theme='light'] .reviews-dot {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+:root[data-theme='light'] .reviews-dot:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* FAQ muted text */
+:root[data-theme='dark'] .faq-muted {
+  color: #a4a7ae;
+}
+:root[data-theme='light'] .faq-muted {
+  color: #717680;
+}
+
+/* FAQ divider line */
+:root[data-theme='dark'] .faq-divider {
+  border-color: #252b37;
+}
+:root[data-theme='light'] .faq-divider {
+  border-color: #dfdfdf;
+}
+
+/* Consultation button styling */
+:root[data-theme='dark'] .faq-consult-btn {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+:root[data-theme='light'] .faq-consult-btn {
+  background-color: #000000;
+  color: #ffffff;
+  box-shadow: inset 4px 4px 4px 0px #ffffff50;
+}
+
+/* Message Form muted subtitle */
+:root[data-theme='dark'] .message-muted {
+  color: #a4a7ae;
+}
+:root[data-theme='light'] .message-muted {
+  color: #717680;
+}
+
+/* Inputs (bg/text/placeholder) */
+:root[data-theme='dark'] .message-input {
+  background-color: #0a0d12;
+  color: #ffffff;
+}
+:root[data-theme='dark'] .message-input::placeholder {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+:root[data-theme='light'] .message-input {
+  background-color: #ffffff;
+  color: #000000;
+}
+:root[data-theme='light'] .message-input::placeholder {
+  color: rgba(0, 0, 0, 0.45);
+}
+
+/* Border colors for inputs + checkboxes */
+:root[data-theme='dark'] .message-input-border {
+  border-color: #252b37;
+}
+:root[data-theme='light'] .message-input-border {
+  border-color: #dfdfdf;
+}
+
+/* Modal theming */
+.modal-card {
+  background-color: #0d1117;
+}
+
+/* Top area */
+:root[data-theme='dark'] .modal-top {
+  background-color: #0a0d12;
+  color: #ffffff;
+}
+:root[data-theme='light'] .modal-top {
+  background-color: #fafafa;
+  color: #000000;
+}
+
+/* Bottom area */
+:root[data-theme='dark'] .modal-bottom {
+  background-color: #000000;
+  color: #ffffff;
+}
+:root[data-theme='light'] .modal-bottom {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* Muted text inside modals */
+:root[data-theme='dark'] .modal-muted {
+  color: rgba(255, 255, 255, 0.7);
+}
+:root[data-theme='light'] .modal-muted {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+/* Modal primary button text color */
+:root[data-theme='dark'] .modal-primary-btn {
+  color: #ffffff;
+}
+:root[data-theme='light'] .modal-primary-btn {
+  color: #000000;
+}
+
+/* Icon shadow differs by theme */
+:root[data-theme='dark'] .modal-icon {
+  filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.35));
+}
+:root[data-theme='light'] .modal-icon {
+  filter: drop-shadow(0 10px 25px rgba(255, 255, 255, 0.35));
+}
+
+/* Spinner colors */
+:root[data-theme='dark'] .spinner-ring {
+  border-color: rgba(255, 255, 255, 0.2);
+  border-top-color: #ffffff;
+}
+:root[data-theme='light'] .spinner-ring {
+  border-color: rgba(0, 0, 0, 0.2);
+  border-top-color: #000000;
+}
+
+/* Footer container */
+:root[data-theme='dark'] .footer-box {
+  background-color: #0a0d12;
+  border-color: #252b37;
+}
+
+:root[data-theme='light'] .footer-box {
+  background-color: #fafafa;
+  border-color: #dfdfdf;
+}
+
+/* Footer divider */
+:root[data-theme='dark'] .footer-divider {
+  border-color: #252b37;
+}
+:root[data-theme='light'] .footer-divider {
+  border-color: #dfdfdf;
+}
+
+/* Social icon border */
+:root[data-theme='dark'] .footer-social {
+  border-color: #252b37;
+}
+:root[data-theme='light'] .footer-social {
+  border-color: #dfdfdf;
+}
+
+.menu-footer-link {
+  display: block; /* key: takes full line */
+  text-align: left; /* key: left aligned */
+  width: 100%;
+  border-radius: 9999px;
+  padding: 0.25rem 0; /* small vertical rhythm on mobile */
+  transition: background-color 200ms ease;
+}
+
+/* Desktop spacing */
+@media (min-width: 768px) {
+  .menu-footer-link {
+    display: inline-flex; /* horizontal row on desktop */
+    width: auto;
+    padding: 0.5rem 1rem; /* py-2 px-4 */
+    align-items: center;
+  }
+}
+
+/* Dark theme hover */
+:root[data-theme='dark'] .menu-footer-link:hover {
+  background-color: #181d27;
+}
+
+/* Light theme hover */
+:root[data-theme='light'] .menu-footer-link:hover {
+  background-color: rgba(255, 255, 255, 0.695);
+}
+
+/* Light theme hover */
+:root[data-theme='light'] .menu-footer-link:hover {
+  background-color: rgba(255, 255, 255, 0.695);
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%); /* enough to move one copy of the logos out */
+  }
+}
