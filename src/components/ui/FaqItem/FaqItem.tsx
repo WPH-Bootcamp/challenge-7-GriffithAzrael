@@ -11,38 +11,46 @@ export interface FaqItemProps extends FaqItemData {
   showDivider?: boolean;
 }
 
-const FaqItem: React.FC<FaqItemProps> = ({ question, answer, isOpen, onToggle, showDivider }) => {
+const FaqItem: React.FC<FaqItemProps> = ({
+  question,
+  answer,
+  isOpen,
+  onToggle,
+  showDivider,
+}) => {
   return (
-    <div className="py-4">
+    <div className='py-4'>
       <button
-        type="button"
+        type='button'
         onClick={onToggle}
-        className="flex w-full items-center justify-between text-left cursor-pointer"
+        className='flex w-full items-center justify-between text-left cursor-pointer'
       >
-        <p className="font-bold text-[18px] leading-8 md:text-2xl md:leading-9">
+        <p className='font-bold text-[18px] leading-8 md:text-2xl md:leading-9'>
           {question}
         </p>
 
-        {/* Icons swap with theme */}
+        {/* Dark theme icons */}
         <img
-          className="show-when-dark shrink-0"
-          src={isOpen ? '/minus.svg' : '/plus.svg'}
+          className='show-when-dark shrink-0'
+          src={isOpen ? 'minus.svg' : 'plus.svg'}
           alt={isOpen ? 'Hide answer' : 'Show answer'}
         />
+
+        {/* Light theme icons */}
         <img
-          className="show-when-light shrink-0"
-          src={isOpen ? '/minus.svg' : '/plus.svg'}
+          className='show-when-light shrink-0'
+          src={isOpen ? 'minus-light.svg' : 'plus-light.svg'}
           alt={isOpen ? 'Hide answer' : 'Show answer'}
         />
       </button>
 
       {isOpen && (
-        <p className="mt-2 faq-muted text-sm leading-7 w-[45ch] md:w-full md:text-[20px]">
+        <p className='mt-2 faq-muted text-sm leading-7 w-[45ch] md:w-full md:text-[20px]'>
           {answer}
         </p>
       )}
 
-      {showDivider && <div className="mt-4 w-full border-1 faq-divider" />}
+      {showDivider && <div className='mt-4 w-full border-1 faq-divider' />}
     </div>
   );
 };
