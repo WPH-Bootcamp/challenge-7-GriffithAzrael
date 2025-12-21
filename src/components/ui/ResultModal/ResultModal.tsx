@@ -13,8 +13,8 @@ export interface ResultModalProps {
 const ResultModal: React.FC<ResultModalProps> = ({
   variant,
   onPrimary,
-  successIconSrc = '/assets/Success_icon.png',
-  failedIconSrc = '/assets/Failed_icon.png',
+  successIconSrc = 'Success_icon.png',
+  failedIconSrc = 'Failed_icon.png',
 }) => {
   const isSuccess = variant === 'success';
   const iconSrc = isSuccess ? successIconSrc : failedIconSrc;
