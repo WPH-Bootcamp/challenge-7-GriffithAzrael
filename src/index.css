@@ -1,5 +1,17 @@
 @import 'tailwindcss';
 
+/* Prevent anchor targets being hidden behind the sticky header */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* mobile header height + a little space */
+}
+
+@media (min-width: 768px) {
+  html {
+    scroll-padding-top: 20px; /* desktop header height + a little space */
+  }
+}
+
 :root[data-theme='light'] {
   color-scheme: light;
 }
